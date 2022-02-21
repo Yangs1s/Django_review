@@ -35,6 +35,7 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 
 INSTALLED_APPS = [
+    "tabom.apps.TabomConfig"
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -83,7 +84,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "DjangoReviewdb",
         "USER": "root",
-        "PASSWORD": "122521",
+        "PASSWORD": "12251",
         "HOST": "localhost",
         "PORT": "3306",
     }
@@ -129,3 +130,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 절대경로를 선호하는 Import를 쓴다. 상대경로를 쓴다면 에러가 자주 나온다고 한다.
+try:
+    from Sparta.local_settings import *
+except ImportError:
+    pass

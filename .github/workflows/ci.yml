@@ -5,12 +5,12 @@ on:
 
 jobs:
   ci:
-
+    #테스트 이기때문에 따로 secret을 걸 필요는 없지만 플젝때는 걸어야할듯
     env:
       DB_DATABASE: DjangoReviewdb
       DB_USER: root
       DB_PASSWORD: 122521
-
+    #########################################################
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codes
